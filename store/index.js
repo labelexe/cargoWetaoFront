@@ -23,7 +23,7 @@ export const mutations = {
     // state.app.initData = tgWebApp.webApp.initData;
     //
     try {
-      if (localStorage.getItem("tg.initData") !== null || localStorage.getItem("tg.initData")) {
+      if (localStorage.getItem("tg.initData") !== null || localStorage.getItem("tg.initData").length > 0) {
         state.app.initData = localStorage.getItem("tg.initData");
       } else {
         localStorage.setItem("tg.initData", JSON.stringify(tgWebApp.webApp.initData));
@@ -35,7 +35,7 @@ export const mutations = {
     }
 
     try {
-      if (localStorage.getItem("tg.userData") !== null || localStorage.getItem("tg.userData")) {
+      if (localStorage.getItem("tg.userData") !== null) {
         state.app.userData = localStorage.getItem("tg.userData");
       } else {
         localStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
