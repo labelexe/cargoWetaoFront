@@ -20,8 +20,32 @@ export const mutations = {
     state.tgWebApp = tgWebApp;
     console.log(state);
     //
-    state.app.initData = tgWebApp.webApp.initData;
-    state.app.userData = tgWebApp.webApp.initDataUnsafe;
+    // state.app.initData = tgWebApp.webApp.initData;
+    //
+    try {
+      if (localStorage.getItem("tg.initData") !== null || localStorage.getItem("tg.initData")) {
+        state.app.initData = localStorage.getItem("tg.initData");
+      } else {
+        localStorage.setItem("tg.initData", JSON.stringify(tgWebApp.webApp.initData));
+        state.app.initData = localStorage.getItem("tg.initData");
+      }
+    } catch (e) {
+      localStorage.setItem("tg.initData", JSON.stringify(tgWebApp.webApp.initData));
+      state.app.initData = localStorage.getItem("tg.initData");
+    }
+
+    try {
+      if (localStorage.getItem("tg.userData") !== null || localStorage.getItem("tg.userData")) {
+        state.app.userData = localStorage.getItem("tg.userData");
+      } else {
+        localStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
+        state.app.userData = localStorage.getItem("tg.userData");
+      }
+    } catch (e) {
+      localStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
+      state.app.userData = localStorage.getItem("tg.userData");
+    }
+
   },
 }
 
@@ -46,7 +70,7 @@ export const getters = {
     return state.tgWebApp
   },
   getTgUserInitData(state) {
-    return state.app.initData ? state.app.initData : {};
+    return JSON.parse(state.app.initData) ? JSON.parse(state.app.initData) : {};
   },
   /**
    * Получение ник
