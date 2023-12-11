@@ -20,7 +20,7 @@ export const state = () => {
 export const mutations = {
   setTgWebApp(state, tgWebApp) {
     state.tgWebApp = tgWebApp;
-    console.log(state);
+    console.debug(state);
     //
     // state.app.initData = tgWebApp.webApp.initData;
     //
