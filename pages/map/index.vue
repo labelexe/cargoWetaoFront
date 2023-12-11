@@ -27,7 +27,7 @@ letter-spacing: -0.18px;">
                 Локации:
               </div>
             </div>
-            <div class="MapMapLocationList">
+            <div class="MapMapLocationList" v-if="dispatchesList.length > 0">
               <div class="MainMapListItem" v-for="dispatchItem in dispatchesList">
                 <div class="MainMapListItemPoint">
                   <div class="MainMapListItemPointTitle">
@@ -39,11 +39,18 @@ letter-spacing: -0.18px;">
                 </div>
               </div>
             </div>
+
+            <div class="MapMapLocationNot" v-else>
+              <div class="MapMapLocationNotBlock">
+                <div class="MapMapLocationNotBlockTitle">
+                  Локации загружаются...
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
-
-
     </template>
   </TwaMainLt>
 </template>
@@ -61,12 +68,18 @@ export default {
       //   '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 8,
       center: [55.7586774649528, 37.61873340813827],
+      dispatchesList: []
     };
   },
   async asyncData({$axios}) {
-    const {result} = await $axios.$get("/api/v1/dispatch_p/get");
+    try {
+      const {result} = await $axios.$get("/api/v1/dispatch_p/get");
+      return {dispatchesList: result}
+    } catch (e) {
+      console.log("map:", e);
+      // return {dispatchesList: []}
+    }
 
-    return {dispatchesList: result}
   },
   components: {
     TwaMainLt, LMap,
@@ -93,4 +106,22 @@ export default {
 .vue2leaflet-map {
   z-index: -1;
 }
+
+
+.MapMapLocationNotBlock {
+  background: #EFF3FF;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+
+.MapMapLocationNotBlock .MapMapLocationNotBlockTitle {
+  color: var(--text-second-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.14px;
+}
+
 </style>

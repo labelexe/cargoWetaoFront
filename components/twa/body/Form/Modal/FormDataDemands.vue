@@ -127,7 +127,7 @@ export default {
   text-align: center;
   background-color: white;
   height: 50vh;
-  width: 50vh;
+  width: 64vh;
   padding: 60px 0;
   border-radius: 20px;
   margin: 10vh 1vh;
