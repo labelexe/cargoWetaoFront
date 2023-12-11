@@ -27,28 +27,28 @@ export const mutations = {
 
     //Init data
     try {
-      if (localStorage.getItem("tg.initData") !== null || localStorage.getItem("tg.initData").length > 0) {
-        state.app.initData = localStorage.getItem("tg.initData");
+      if (sessionStorage.getItem("tg.initData") !== null || sessionStorage.getItem("tg.initData").length > 0) {
+        state.app.initData = sessionStorage.getItem("tg.initData");
       } else {
-        localStorage.setItem("tg.initData", JSON.stringify(WebApp.initData));
+        sessionStorage.setItem("tg.initData", JSON.stringify(WebApp.initData));
         // WebApp.showAlert("test");
-        state.app.initData = localStorage.getItem("tg.initData");
+        state.app.initData = sessionStorage.getItem("tg.initData");
       }
     } catch (e) {
-      localStorage.setItem("tg.initData", JSON.stringify(tgWebApp.webApp.initData));
-      state.app.initData = localStorage.getItem("tg.initData");
+      sessionStorage.setItem("tg.initData", JSON.stringify(WebApp.initData));
+      state.app.initData = sessionStorage.getItem("tg.initData");
     }
 
     try {
-      if (localStorage.getItem("tg.userData") !== null) {
-        state.app.userData = localStorage.getItem("tg.userData");
+      if (sessionStorage.getItem("tg.userData") !== null) {
+        state.app.userData = sessionStorage.getItem("tg.userData");
       } else {
-        localStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
-        state.app.userData = localStorage.getItem("tg.userData");
+        sessionStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
+        state.app.userData = sessionStorage.getItem("tg.userData");
       }
     } catch (e) {
-      localStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
-      state.app.userData = localStorage.getItem("tg.userData");
+      sessionStorage.setItem("tg.userData", JSON.stringify(tgWebApp.webApp.initDataUnsafe));
+      state.app.userData = sessionStorage.getItem("tg.userData");
     }
 
   },
@@ -75,7 +75,7 @@ export const getters = {
     return state.tgWebApp
   },
   getTgUserInitData(state) {
-    const initData = localStorage.getItem("tg.initData");
+    const initData = sessionStorage.getItem("tg.initData");
     return JSON.parse(initData);
     // return JSON.parse(state.app.initData) ? JSON.parse(state.app.initData) : {};
   },

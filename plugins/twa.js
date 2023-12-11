@@ -7,7 +7,7 @@ export default ({app, store}, inject) => {
     const tgWindow = window.Telegram
     // const tgWebApp = tgWindow.WebApp;
     const tgWebApp = WebApp;
-    WebApp.showAlert(`Hello World! Current count is 1`);
+    // WebApp.showAlert(`Hello World! Current count is 1`);
     //Initial Store
     store.commit('setTgWebApp', {
       userData: tgWebApp.initDataUnsafe.user,
@@ -18,6 +18,10 @@ export default ({app, store}, inject) => {
       WdTg: tgWindow,
       WApp: tgWebApp
     }));
+
+    //
+    inject('TgWApp', Vue.observable(tgWebApp));
+
     // console.log({
     //   userData: tgWebApp.initDataUnsafe.user,
     //   webApp: tgWebApp,
