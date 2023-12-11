@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[34],{455:function(n,e,t){"use strict";t.r(e);var o={name:"OrderRequestSlug",components:{TwaMainLt:t(316).a}},c=t(53),component=Object(c.a)(o,(function(){return(0,this._self._c)("TwaMainLt",{scopedSlots:this._u([{key:"Body",fn:function(){},proxy:!0}])})}),[],!1,null,"471ed3f8",null);e.default=component.exports}}]);

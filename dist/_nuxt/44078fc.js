@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[35],{458:function(n,t,e){"use strict";e.r(t);var o={name:"OrderRequestSlugPay",components:{TwaMainLt:e(316).a}},c=e(53),component=Object(c.a)(o,(function(){return(0,this._self._c)("TwaMainLt",{scopedSlots:this._u([{key:"Body",fn:function(){},proxy:!0}])})}),[],!1,null,"4f8042d7",null);t.default=component.exports}}]);

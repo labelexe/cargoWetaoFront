@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[30],{453:function(n,o,t){"use strict";t.r(o);var e={name:"orderCargoSlug",components:{TwaMainLt:t(313).a}},c=t(53),component=Object(c.a)(e,(function(){return(0,this._self._c)("TwaMainLt",{scopedSlots:this._u([{key:"Body",fn:function(){},proxy:!0}])})}),[],!1,null,"b2fc9f6e",null);o.default=component.exports}}]);

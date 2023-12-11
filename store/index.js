@@ -31,7 +31,7 @@ export const mutations = {
         state.app.initData = localStorage.getItem("tg.initData");
       } else {
         localStorage.setItem("tg.initData", JSON.stringify(WebApp.initData));
-        WebApp.showAlert("test");
+        // WebApp.showAlert("test");
         state.app.initData = localStorage.getItem("tg.initData");
       }
     } catch (e) {
