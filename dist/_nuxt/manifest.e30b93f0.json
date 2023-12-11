@@ -1,9 +1,0 @@
-{
-  "name": "twa_WS_DAVDAM",
-  "short_name": "twa_WS_DAVDAM",
-  "icons": [],
-  "start_url": "/?standalone=true",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "lang": "ru"
-}
