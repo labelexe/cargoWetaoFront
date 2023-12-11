@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{450:function(n,t,e){"use strict";e.r(t);var c={name:"tickets"},o=e(53),component=Object(o.a)(c,(function(){return(0,this._self._c)("div")}),[],!1,null,"481d1fa6",null);t.default=component.exports}}]);
