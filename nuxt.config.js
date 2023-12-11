@@ -15,7 +15,7 @@ export default {
       {name: 'format-detection', content: 'telephone=no'}
     ],
     script: [
-      {src: "/js/twa-tg.js", type: 'text/javascript', async: false, body: true, defer: false},
+      // {src: "/js/twa-tg.js", type: 'text/javascript', async: false, body: true, defer: false},
       //
       // {src: "https://cdn.jsdelivr.net/npm/eruda@3.0.1/eruda.min.js", async: true}
     ],

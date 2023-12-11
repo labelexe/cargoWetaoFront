@@ -28,9 +28,10 @@ export default {
   name: "SupportTicketBtn",
   methods: {
     showOrderNewRequest() {
-      this.$router.push({
-        name: "app-more"
-      })
+      // this.$router.push({
+      //   name: "app-more"
+      // })
+      window.open("https://t.me/spcrgwt_bot")
     }
   }
 }

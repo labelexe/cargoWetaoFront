@@ -1,10 +1,13 @@
 import Vue from 'vue'
+import WebApp from "@twa-dev/sdk";
 
 //
 export default ({app, store}, inject) => {
   if (window.Telegram) {
     const tgWindow = window.Telegram
-    const tgWebApp = tgWindow.WebApp;
+    // const tgWebApp = tgWindow.WebApp;
+    const tgWebApp = WebApp;
+    WebApp.showAlert(`Hello World! Current count is 1`);
     //Initial Store
     store.commit('setTgWebApp', {
       userData: tgWebApp.initDataUnsafe.user,

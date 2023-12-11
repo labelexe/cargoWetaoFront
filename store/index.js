@@ -1,5 +1,7 @@
 // store/index.js
 
+import WebApp from '@twa-dev/sdk'
+
 export const state = () => {
   //TgWebState
   return {
@@ -22,11 +24,14 @@ export const mutations = {
     //
     // state.app.initData = tgWebApp.webApp.initData;
     //
+
+    //Init data
     try {
       if (localStorage.getItem("tg.initData") !== null || localStorage.getItem("tg.initData").length > 0) {
         state.app.initData = localStorage.getItem("tg.initData");
       } else {
-        localStorage.setItem("tg.initData", JSON.stringify(tgWebApp.webApp.initData));
+        localStorage.setItem("tg.initData", JSON.stringify(WebApp.initData));
+        WebApp.showAlert("test");
         state.app.initData = localStorage.getItem("tg.initData");
       }
     } catch (e) {
@@ -70,7 +75,9 @@ export const getters = {
     return state.tgWebApp
   },
   getTgUserInitData(state) {
-    return JSON.parse(state.app.initData) ? JSON.parse(state.app.initData) : {};
+    const initData = localStorage.getItem("tg.initData");
+    return JSON.parse(initData);
+    // return JSON.parse(state.app.initData) ? JSON.parse(state.app.initData) : {};
   },
   /**
    * Получение ник
